@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rubik&display=swap');
+/*font-family: 'Lobster', cursive;
+font-family: 'Rubik', sans-serif;*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/**********navbar style start*************/
+
+nav{
+    position: fixed;
+    top: 0;
+    background-image: linear-gradient(rgb(31, 31, 54),rgb(19, 19, 32));
+    height: 3em;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding-left: 2em;
+    padding-right: 2em;
+    box-shadow: 0 2px 3px 1px white;
+    z-index: 2;
+}
+
+.logo , .ham{
+    background:none;
+    color: antiquewhite; 
+    font-size: larger;
+    flex: 0 0 max-content;
+    transition: color 0.4s;
+    font-family: 'Lobster', cursive;
+}
+
+.logo:hover , .ham:hover{
+    color: rgb(175, 187, 171); 
+
+}
+/************navbar style end****************/
+/****************Main style start************/
+main {
+    margin-top: 3em;
+    padding: 5em;
+    min-height: calc(100vh - 3em);
+    background-image: radial-gradient(rgb(4, 145, 201),rgb(3, 168, 223));
+    display: grid;
+    grid-template-columns: 12em 12em 12em;
+    grid-auto-rows: 12em;
+    gap: 1em;
+    justify-content: center;
+    align-content: center;
+    transition: scroll 1s;
+}
+
+@media screen and (max-width: 650px) {
+    main {
+    grid-template-columns: 12em;
+    grid-auto-rows : 12em;
+    padding: 1em;
+    }
+}
+
+/***************Main style end**************/
+/**********footer style start***************/
+footer{
+    position: fixed;
+    bottom: 0;
+    background-image: linear-gradient(rgb(31, 31, 54),rgb(19, 19, 32));
+    height: 3em;
+    width: 100%;
+    display:grid;
+    grid-template-columns: 1fr max-content max-content 1fr;
+    gap: 0.5em;
+    align-items: center;  
+    overflow: auto;
+    /*****footer border******/
+    border-top: 2px solid rgb(205, 243, 240);
+}
+
+footer > div, a {
+    color: antiquewhite; 
+    transition: color 0.4s;
+    font-family: 'Rubik', sans-serif;
+}
+
+footer > div:hover, a:hover{
+color: rgb(175, 187, 171); 
+}
+
+.terms-of-use{
+    justify-self: end;
+}
+.data-privacy{
+    justify-self: start;
+}
+.copyright-text{
+    padding-left: 2em;
+}
+
+/*************footer style end*****************/
+
+/************************main page items style start***********************************/
+main > div {
+    background-color: rgb(46, 7, 82);
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 2px 3px  rgb(70 171 211);
+
+}
+
+main > div:hover{
+    box-shadow: 0 0 2px 3px rgb(43, 111, 138);
+    transform:rotateZ(-2deg);
+}
+/********item content style start****/
+.item > h3{
+    height: 20%;
+    background-color: rgb(73 158 177);;
+    text-align: center;
+    border-top: 2px solid white;
+    font-family: 'Rubik', sans-serif;
+    font-size:larger;
+}
+.item > h3:hover{
+    border-top: 2px solid rgb(39, 135, 245);  
+}
+.item > p {
+    height: 80%;
+    background-color:  rgb(31 31 54);
+    font-family: 'Rubik', sans-serif;
+    padding: 5px;
+    overflow: hidden;
+    color: aliceblue;
+
+}
+/*****item content style end*********/
+/****************main page item style end******************************************/
+
+
+/****************Selected Item page style start********************/
+.item-content{
+    margin-top: 3em;
+    min-height: calc(100vh - 3em);
+    background-image: radial-gradient(rgb(4, 145, 201),rgb(3, 168, 223));
+    display: flex;
+    flex-direction: column;
+    padding: 5em 10em 5em 10em;
+}
+header{
+    text-align: center;
+    background-color: rgb(50,17,80);
+    border-top: 2px solid rgb(139 27 0);
+    font-family: 'Rubik', sans-serif;
+    font-size:larger;
+    color: antiquewhite;
+}
+.content-container{
+    background-color: white;
+    font-family: 'Rubik', sans-serif;
+    padding: 5px;
+    overflow: hidden;
+    color: aliceblue;
+    display: flex;
+    flex: 5 1 auto;
+}
+.prev, .next{
+    background: none;
+    border: 2px double white;
+    background-color: rgb(50 17 80);
+    color: white;
+    font-size: 1.1em;
+    flex: 0 0 5em;
+    align-self: center;
+    border-radius: 2px;
+    margin: 0.2em;
+    transition: background-color 0.5s;
+
+
+}
+.prev:active, .next:active{
+    background-color: rgb(42, 91, 102);
+}
+.content-text{
+    border-right: 1px solid;
+    border-left: 1px solid;
+    padding: 0.5em;
+    margin: 0.2em;
+    flex: 5 1;
+    color: rgb(4 145 201);
+}
+
+/******************Media query style for item contnet page****/
+@media  screen and (max-width:900px) {
+    .item-content{
+        margin-top: 3em;
+        min-height: calc(100vh - 3em);
+        background-image: radial-gradient(rgb(4, 145, 201),rgb(3, 168, 223));
+        display: flex;
+        flex-direction: column;
+        padding: 5em 0 5em 0;
+    }
+    .content-container{
+        background-color: white;
+        font-family: 'Rubik', sans-serif;
+        padding: 5px 8px;
+        overflow: hidden;
+        color: aliceblue;
+        display: flex;
+        flex-direction: column;
+    }
+    .prev, .next{
+        background: none;
+        border: 2px double white;
+        background-color: rgb(73 158 177);
+        color: white;
+        font-size: 1.1em;
+        flex: 0 0 2em;
+        border-radius: 2px;
+        margin: 0.2em;
+        order: 2;
+        width: 5em;
+        height: 1em;
+    }
+    .content-text{
+        flex: 1 1 auto;
+        border: 2px solid;
+    }
+    
+}
+/****Media query style for item contnet page****/
+
+/******************Selected Item content style end*************/
+
+/****************Class to remove element form document flow and hode them without destroying************/
+
+.hide-element{
+    display: none;
+}
+/*************errorr message style***********/
+.error{
+    position: absolute;
+    top: 3em;
+    width: max-content;
+    background-color: rgb(122, 6, 6);
+    font-size: 1.1em;
+    color: aliceblue;
+    border: 2px solid rgb(241, 9, 9);
+    padding: 3px;
+    z-index: 3;
+}
